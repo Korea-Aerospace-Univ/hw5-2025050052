@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 int main() {
-    int N,A,B,C,n=0;
+    int N,A,B,C;
+    bool n=true;
     scanf("%d", &N);
 
     for(A=1;A*900<N;A++) {
@@ -10,13 +11,13 @@ int main() {
                 if((900*A+750*B+200*C)==N) {
                     if(C<A || C<B) {
                         printf("%d %d %d\n", A,B,C);
-                        n=1;
+                        n=false;
                     }
                 }
             }
         }
     }
-    if(n==0)
+    if(n)
         printf("none");
     return 0;
 }
